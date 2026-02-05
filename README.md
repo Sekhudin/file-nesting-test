@@ -67,7 +67,7 @@ All files are organized per language or framework in separate folders to make te
             ];
         };
     };
-```
+    ```
 
 ---
 ## Other Rules
