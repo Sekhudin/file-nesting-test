@@ -68,37 +68,37 @@
 
 - **Neo-tree (Nixvim)**
 
-Rules for grouping related files under their primary source file.
-```nix
-plugins.neo-tree.settings.nesting_rules = {
-    "js-declarations" = {
-        priority = 100;
-        pattern = "(.+)%.js$";
-        files = [
-            "%1.d.ts"
-            "%1.js.map"
-        ];
+    Rules for grouping related files under their primary source file.
+    ```nix
+    plugins.neo-tree.settings.nesting_rules = {
+        "js-declarations" = {
+            priority = 100;
+            pattern = "(.+)%.js$";
+            files = [
+                "%1.d.ts"
+                "%1.js.map"
+            ];
+        };
+        "js-base-test" = {
+            priority = 100;
+            pattern = "(.+)%.js$";
+            files = [
+                "%1.spec.js"
+                "%1.test.js"
+                "%1.e2e-spec.js"
+                "%1.e2e-test.js"
+            ];
+        };
+        "js-react-test" = {
+            priority = 100;
+            pattern = "(.+)%.jsx$";
+            files = [
+                "%1.spec.jsx"
+                "%1.test.jsx"
+                "%1.e2e-spec.jsx"
+                "%1.e2e-test.jsx"
+                "%1.stories.jsx"
+            ];
+        };
     };
-    "js-base-test" = {
-        priority = 100;
-        pattern = "(.+)%.js$";
-        files = [
-            "%1.spec.js"
-            "%1.test.js"
-            "%1.e2e-spec.js"
-            "%1.e2e-test.js"
-        ];
-    };
-    "js-react-test" = {
-        priority = 100;
-        pattern = "(.+)%.jsx$";
-        files = [
-            "%1.spec.jsx"
-            "%1.test.jsx"
-            "%1.e2e-spec.jsx"
-            "%1.e2e-test.jsx"
-            "%1.stories.jsx"
-        ];
-    };
-};
-```
+    ```

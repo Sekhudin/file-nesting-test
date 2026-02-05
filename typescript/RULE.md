@@ -70,38 +70,38 @@
 
 - **Neo-tree (Nixvim)**
 
-Rules for grouping related files under their primary source file.
-```nix
-plugins.neo-tree.settings.nesting_rules = {
-    "ts-declarations" = {
-        priority = 100;
-        pattern = "(.+)%.ts$";
-        files = [
-            "%1.d.ts"
-            "%1.type.ts"
-            "%1.interface.ts"
-        ];
+    Rules for grouping related files under their primary source file.
+    ```nix
+    plugins.neo-tree.settings.nesting_rules = {
+        "ts-declarations" = {
+            priority = 100;
+            pattern = "(.+)%.ts$";
+            files = [
+                "%1.d.ts"
+                "%1.type.ts"
+                "%1.interface.ts"
+            ];
+        };
+        "ts-base-test" = {
+            priority = 100;
+            pattern = "(.+)%.ts$";
+            files = [
+                "%1.spec.ts"
+                "%1.test.ts"
+                "%1.e2e-spec.ts"
+                "%1.e2e-test.ts"
+            ];
+        };
+        "ts-react-test" = {
+            priority = 100;
+            pattern = "(.+)%.tsx$";
+            files = [
+                "%1.spec.tsx"
+                "%1.test.tsx"
+                "%1.e2e-spec.tsx"
+                "%1.e2e-test.tsx"
+                "%1.stories.tsx"
+            ];
+        };
     };
-    "ts-base-test" = {
-        priority = 100;
-        pattern = "(.+)%.ts$";
-        files = [
-            "%1.spec.ts"
-            "%1.test.ts"
-            "%1.e2e-spec.ts"
-            "%1.e2e-test.ts"
-        ];
-    };
-    "ts-react-test" = {
-        priority = 100;
-        pattern = "(.+)%.tsx$";
-        files = [
-            "%1.spec.tsx"
-            "%1.test.tsx"
-            "%1.e2e-spec.tsx"
-            "%1.e2e-test.tsx"
-            "%1.stories.tsx"
-        ];
-    };
-};
-```
+    ```

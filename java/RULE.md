@@ -17,16 +17,16 @@
 
 - **Neo-tree (Nixvim)**
 
-Rules for grouping related files under their primary source file.
-```nix
-plugins.neo-tree.settings.nesting_rules = {
-    "java-base-test" = {
-        priority = 100;
-        pattern = "(.+)%.java$";
-        files = [
-            "%1IT.java"
-            "%1Test.java"
-        ];
+    Rules for grouping related files under their primary source file.
+    ```nix
+    plugins.neo-tree.settings.nesting_rules = {
+        "java-base-test" = {
+            priority = 100;
+            pattern = "(.+)%.java$";
+            files = [
+                "%1IT.java"
+                "%1Test.java"
+            ];
+        };
     };
-};
-```
+    ```

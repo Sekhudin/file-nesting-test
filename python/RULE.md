@@ -17,18 +17,18 @@
 
 ## Rules
 
-- **Neo-tree (Nixvim)**
-
-Rules for grouping related files under their primary source file.
-```nix
-plugins.neo-tree.settings.nesting_rules = {
-    "python-base-test" = {
-        priority = 100;
-        pattern = "(.+)%.py$";
-        files = [
-            "test_%1.py"
-            "%1_test.py"
-        ];
+    - **Neo-tree (Nixvim)**
+    
+    Rules for grouping related files under their primary source file.
+    ```nix
+    plugins.neo-tree.settings.nesting_rules = {
+        "python-base-test" = {
+            priority = 100;
+            pattern = "(.+)%.py$";
+            files = [
+                "test_%1.py"
+                "%1_test.py"
+            ];
+        };
     };
-};
-```
+    ```
