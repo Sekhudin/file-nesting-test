@@ -44,29 +44,29 @@ All files are organized per language or framework in separate folders to make te
 
 - **Neo-tree (Nixvim)**
 
-Rules for grouping related files under their primary source file.
-```nix
-plugins.neo-tree.settings.nesting_rules = {
-    "docker" = {
-        pattern = "^dockerfile$";
-        ignore_case = true;
-        files = [
-            ".dockerignore"
-            "docker-compose.*"
-            "dockerfile.*"
-        ];
+    Rules for grouping related files under their primary source file.
+    ```nix
+    plugins.neo-tree.settings.nesting_rules = {
+        "docker" = {
+            pattern = "^dockerfile$";
+            ignore_case = true;
+            files = [
+                ".dockerignore"
+                "docker-compose.*"
+                "dockerfile.*"
+            ];
+        };
+        "node" = {
+            pattern = "^package%.json$";
+            files = [
+                "package-lock.json"
+                "yarn.lock"
+                "pnpm-lock.yaml"
+                "bun.lockb"
+                "bun.lock"
+            ];
+        };
     };
-    "node" = {
-        pattern = "^package%.json$";
-        files = [
-            "package-lock.json"
-            "yarn.lock"
-            "pnpm-lock.yaml"
-            "bun.lockb"
-            "bun.lock"
-        ];
-    };
-};
 ```
 
 ---
